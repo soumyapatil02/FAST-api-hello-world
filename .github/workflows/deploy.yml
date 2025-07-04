@@ -18,7 +18,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd /home/ubuntu/fastapi-app
+          cd /home/ec2-user/fastapi-app
           git pull origin main
           docker build -t fastapi-app .
           docker stop fastapi-container || true
